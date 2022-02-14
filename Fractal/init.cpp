@@ -1,6 +1,4 @@
-#include"main.h"
-#include"configuration.h"
-
+#include"scene.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -11,6 +9,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
     if (DxLib::DxLib_Init() == -1) return -1;
     DxLib::SetDrawScreen(DX_SCREEN_BACK);
     //main関数呼び出し
-    fractal::Main();
+    fractal::Scene();
     return DxLib::DxLib_End();
 }
