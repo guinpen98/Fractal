@@ -7,7 +7,7 @@ namespace fractal {
 
 	void mandelbrot(vector<vector<colorE>>& arr);
 	void drawMandelbrotSet(const vector<vector<colorE>>& arr);
-	void mandelbrotSetScene(sceneE current_scene);
+	void mandelbrotSetScene(sceneE& current_scene);
 }
 
 #endif // !FRACTAL_MANDELBROT_SET_H

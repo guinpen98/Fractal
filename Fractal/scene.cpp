@@ -4,13 +4,18 @@ namespace fractal {
 
 	void scene() {
 		sceneE current_scene = mandelbrot_setE;
-		switch (mandelbrot_setE)
-		{
-		case mandelbrot_setE:
-			mandelbrotSetScene(current_scene);
-			break;
-		default:
-			break;
+		while (update()) {
+			switch (current_scene)
+			{
+			case mandelbrot_setE:
+				mandelbrotSetScene(current_scene);
+				break;
+			case barnsley_fernE:
+				barnsleyFernScene(current_scene);
+				break;
+			default:
+				break;
+			}
 		}
 	}
 }

@@ -151,17 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="barnsley_fern.cpp" />
     <ClCompile Include="init.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="mandelbrot_set.cpp" />
     <ClCompile Include="system.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="barnsley_fern.h" />
     <ClInclude Include="complex.h" />
     <ClInclude Include="configuration.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="mandelbrot_set.h" />
     <ClInclude Include="system.h" />
+    <ClInclude Include="vec2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

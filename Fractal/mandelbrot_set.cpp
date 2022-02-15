@@ -53,10 +53,9 @@ namespace fractal {
 					break;
 				}
 				DrawPixel(x, y, cr);
-				//DrawBox(x, y, x + 1, y + 1, cr, TRUE);
 			}
 	}
-	void mandelbrotSetScene(sceneE current_scene) {
+	void mandelbrotSetScene(sceneE& current_scene) {
 		//ピクセルの配列
 		vector<vector<colorE>> pixel(window_h,vector<colorE>(window_w));
 		//key入力

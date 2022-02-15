@@ -4,7 +4,7 @@
 #include"configuration.h"
 namespace fractal {
 	bool update();
-	void moveScene(sceneE current_scene);
+	void moveScene(sceneE& current_scene);
 }
 
 #endif // !FRACTAL_SYSTEM_H
