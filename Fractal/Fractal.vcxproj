@@ -157,6 +157,7 @@
     <ClCompile Include="system.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="complex.h" />
     <ClInclude Include="configuration.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="mandelbrot_set.h" />

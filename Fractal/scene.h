@@ -2,7 +2,7 @@
 #define FRACTAL_SCENE_H
 #include"mandelbrot_set.h"
 namespace fractal {
-	void Scene();
+	void scene();
 }
 
 #endif // !FRACTAL_SCENE_H

@@ -9,6 +9,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
     if (DxLib::DxLib_Init() == -1) return -1;
     DxLib::SetDrawScreen(DX_SCREEN_BACK);
     //main関数呼び出し
-    fractal::Scene();
+    fractal::scene();
     return DxLib::DxLib_End();
 }
