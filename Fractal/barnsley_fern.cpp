@@ -13,14 +13,10 @@ namespace fractal {
 		char key_state[256];
 		//ピクセルの配列
 		vector<vector<int>> pixel(pixel_h, vector<int>(pixel_w, 0));
-		//ランダム
-		random_device rd;
-		default_random_engine eng(rd());
-		uniform_real_distribution<double> distr(0, 1);
 		//座標
 		Vec2 coord(0.0, 0.0);
 		for (int i = 0; i < num; i++) {
-			double r = distr(eng);
+			double r = random();
 			if (r < 0.01) coord = f1(coord);
 			else if (r < 0.86) coord = f2(coord);
 			else if (r < 0.93) coord = f3(coord);
