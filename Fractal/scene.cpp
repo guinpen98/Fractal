@@ -13,6 +13,12 @@ namespace fractal {
 			case barnsley_fernE:
 				barnsleyFernScene(current_scene);
 				break;
+			case ssangyongE:
+				ssangyongScene(current_scene);
+				break;
+			case branchE:
+				branchScene(current_scene);
+				break;
 			default:
 				break;
 			}

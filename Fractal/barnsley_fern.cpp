@@ -12,32 +12,33 @@ namespace fractal {
 		//key入力
 		char key_state[256];
 		//ピクセルの配列
-		vector<vector<int>> pixel(pixel_h, vector<int>(pixel_w, 0));
+		vector<vector<int>> pixel(fern_pixel_h, vector<int>(fern_pixel_w, 0));
 		//座標
 		Vec2 coord(0.0, 0.0);
-		for (int i = 0; i < num; i++) {
+		for (int i = 0; i < fern_num; i++) {
 			double r = random();
 			if (r < 0.01) coord = f1(coord);
 			else if (r < 0.86) coord = f2(coord);
 			else if (r < 0.93) coord = f3(coord);
 			else coord = f4(coord);
-			Vec2 icoord(pixel_w / 2 + coord.x * pixel_w / 10, pixel_h - coord.y * pixel_h / 12);
+			Vec2 icoord(fern_pixel_w / 2 + coord.x * fern_pixel_w / 10, fern_pixel_h - coord.y * fern_pixel_h / 12);
+			if (icoord.x < 0 || icoord.x > fern_pixel_w || icoord.y < 0 || icoord.y > fern_pixel_h) continue;
  			pixel[int(icoord.y)][int(icoord.x)] = 1;
 		}
 		while (current_scene == barnsley_fernE && update()) {
 			GetHitKeyStateAll(key_state);
 			if (key_state[KEY_INPUT_A]) moveScene(current_scene);
-			drawMandelbrotSet(pixel);
+			drawBarnsleyFern(pixel);
 		}
 
 	}
-	void drawMandelbrotSet(const vector<vector<int>>& pixel) {
-		for (int y = 0; y < pixel_h; y++)
-			for (int x = 0; x < pixel_w; x++) {
+	void drawBarnsleyFern(const vector<vector<int>>& pixel) {
+		for (int y = 0; y < fern_pixel_h; y++)
+			for (int x = 0; x < fern_pixel_w; x++) {
 				if (pixel[y][x] == 1)
-					DrawBox(x * pixel_size, y * pixel_size, (x + 1) * pixel_size, (y + 1) * pixel_size, GetColor(0,50,0), TRUE);
+					DrawBox(x * fern_pixel_size, y * fern_pixel_size, (x + 1) * fern_pixel_size, (y + 1) * fern_pixel_size, GetColor(0,50,0), TRUE);
 				else
-					DrawBox(x * pixel_size, y * pixel_size, (x + 1) * pixel_size, (y + 1) * pixel_size, GetColor(255, 255, 255), TRUE);
+					DrawBox(x * fern_pixel_size, y * fern_pixel_size, (x + 1) * fern_pixel_size, (y + 1) * fern_pixel_size, GetColor(255, 255, 255), TRUE);
 			}
 	}
 

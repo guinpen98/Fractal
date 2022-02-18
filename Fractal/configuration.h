@@ -12,14 +12,27 @@ namespace fractal {
 	constexpr int complex_plane_h = window_h / coefficient;
 	constexpr int max_it = 256;
 	//バーンスレイのシダの設定
-	constexpr int pixel_size = 3;
-	constexpr int pixel_w = window_w / pixel_size;
-	constexpr int pixel_h = window_h / pixel_size;
-	constexpr int num = 50000;
+	constexpr int fern_pixel_size = 3;
+	constexpr int fern_pixel_w = window_w / fern_pixel_size;
+	constexpr int fern_pixel_h = window_h / fern_pixel_size;
+	constexpr int fern_num = 50000;
+	//双龍形の設定
+	constexpr int ssangyong_pixel_size = 2;
+	constexpr int ssangyong_pixel_w = window_w / ssangyong_pixel_size;
+	constexpr int ssangyong_pixel_h = window_h / ssangyong_pixel_size;
+	constexpr int ssangyong_num = 50000;
+	//枝の設定
+	constexpr int branch_pixel_size = 1;
+	constexpr int branch_pixel_w = window_w / branch_pixel_size;
+	constexpr int branch_pixel_h = window_h / branch_pixel_size;
+	constexpr int branch_num = 50000;
+
 
 	enum sceneE :int {
 		mandelbrot_setE
 		,barnsley_fernE
+		,ssangyongE
+		,branchE
 		,tailE
 	};
 

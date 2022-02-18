@@ -7,7 +7,7 @@
 namespace fractal {
 
 	void barnsleyFernScene(sceneE& current_scene);
-	void drawMandelbrotSet(const vector<vector<int>>& pixel);
+	void drawBarnsleyFern(const vector<vector<int>>& pixel);
 }
 
 #endif // !FRACTAL_BARNSLEY_FERN_H
