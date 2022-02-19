@@ -3,21 +3,23 @@
 namespace fractal {
 
 	void scene() {
-		sceneE current_scene = mandelbrot_setE;
-		while (update()) {
+		sceneE current_scene = sceneE::barnsley_fernE;
+		//ピクセルの配列
+		color_matrix pixel(window_h, color_array(window_w, 0));
+		while (fractal::update()) {
 			switch (current_scene)
 			{
-			case mandelbrot_setE:
-				mandelbrotSetScene(current_scene);
+			case sceneE::mandelbrot_setE:
+				mandelbrotSetScene(current_scene, pixel);
 				break;
-			case barnsley_fernE:
-				barnsleyFernScene(current_scene);
+			case sceneE::barnsley_fernE:
+				barnsleyFernScene(current_scene, pixel);
 				break;
-			case ssangyongE:
-				ssangyongScene(current_scene);
+			case sceneE::ssangyongE:
+				ssangyongScene(current_scene, pixel);
 				break;
-			case branchE:
-				branchScene(current_scene);
+			case sceneE::branchE:
+				branchScene(current_scene, pixel);
 				break;
 			default:
 				break;

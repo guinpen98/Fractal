@@ -1,8 +1,8 @@
-#include "mandelbrot_set.h"
+﻿#include "mandelbrot_set.h"
 
 namespace fractal {
 
-	void mandelbrot(vector<vector<colorE>>& arr) {
+	void mandelbrot(color_matrix& arr) {
 		for (int ky = 0; ky < window_h; ky++) {
 			double cy = (double(window_h - ky) / coefficient) - (complex_plane_h / 2);
 			for (int kx = 0; kx < window_w; kx++) {
@@ -28,7 +28,7 @@ namespace fractal {
 			}
 		}
 	}
-	void drawMandelbrotSet(const vector<vector<colorE>>& arr) {
+	void drawMandelbrotSet(const color_matrix& arr) {
 		unsigned int cr = GetColor(0, 0, 0);
 		for(int y = 0; y < window_h; y++)
 			for (int x = 0; x < window_w; x++) {
@@ -55,13 +55,11 @@ namespace fractal {
 				DrawPixel(x, y, cr);
 			}
 	}
-	void mandelbrotSetScene(sceneE& current_scene) {
-		//ピクセルの配列
-		vector<vector<colorE>> pixel(window_h,vector<colorE>(window_w));
+	void mandelbrotSetScene(sceneE& current_scene, color_matrix& pixel) {
 		//key入力
 		char key_state[256];
 		mandelbrot(pixel);
-		while (current_scene == mandelbrot_setE && update()) {
+		while (current_scene == sceneE::mandelbrot_setE && update()) {
 			GetHitKeyStateAll(key_state);
 			if (key_state[KEY_INPUT_SPACE]) moveScene(current_scene);
 			drawMandelbrotSet(pixel);

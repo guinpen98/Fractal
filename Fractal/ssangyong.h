@@ -6,8 +6,8 @@
 #include"system.h"
 namespace fractal {
 
-	void ssangyongScene(sceneE& current_scene);
-	void drawSsangyong(const vector<vector<int>>& pixel);
+	void ssangyongScene(sceneE& current_scene, color_matrix& pixel);
+	void drawSsangyong(const color_matrix& pixel);
 }
 
 #endif // !FRACTAL_SSANGYONG_H

@@ -5,9 +5,9 @@
 #include"complex.h"
 namespace fractal {
 
-	void mandelbrot(vector<vector<colorE>>& arr);
-	void drawMandelbrotSet(const vector<vector<colorE>>& arr);
-	void mandelbrotSetScene(sceneE& current_scene);
+	void mandelbrot(color_matrix& arr);
+	void drawMandelbrotSet(const color_matrix& arr);
+	void mandelbrotSetScene(sceneE& current_scene, color_matrix& pixel);
 }
 
 #endif // !FRACTAL_MANDELBROT_SET_H

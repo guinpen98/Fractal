@@ -1,8 +1,8 @@
-#include "barnsley_fern.h"
+﻿#include "barnsley_fern.h"
 
 namespace fractal {
 
-	void barnsleyFernScene(sceneE& current_scene) {
+	void barnsleyFernScene(sceneE& current_scene, color_matrix& pixel) {
 		//アフィン変換
 		auto f1 = [](Vec2 coord) -> Vec2{return Vec2(0.0, 0.16 * coord.y); };
 		auto f2 = [](Vec2 coord) -> Vec2{return Vec2(0.85 * coord.x + 0.04 * coord.y, -0.04 * coord.x + 0.85 * coord.y + 1.6); };
@@ -11,8 +11,6 @@ namespace fractal {
 
 		//key入力
 		char key_state[256];
-		//ピクセルの配列
-		vector<vector<int>> pixel(fern_pixel_h, vector<int>(fern_pixel_w, 0));
 		//座標
 		Vec2 coord(0.0, 0.0);
 		for (int i = 0; i < fern_num; i++) {
@@ -25,14 +23,14 @@ namespace fractal {
 			if (icoord.x < 0 || icoord.x > fern_pixel_w || icoord.y < 0 || icoord.y > fern_pixel_h) continue;
  			pixel[int(icoord.y)][int(icoord.x)] = 1;
 		}
-		while (current_scene == barnsley_fernE && update()) {
+		while (current_scene == sceneE::barnsley_fernE && update()) {
 			GetHitKeyStateAll(key_state);
 			if (key_state[KEY_INPUT_A]) moveScene(current_scene);
 			drawBarnsleyFern(pixel);
 		}
 
 	}
-	void drawBarnsleyFern(const vector<vector<int>>& pixel) {
+	void drawBarnsleyFern(const color_matrix& pixel) {
 		for (int y = 0; y < fern_pixel_h; y++)
 			for (int x = 0; x < fern_pixel_w; x++) {
 				if (pixel[y][x] == 1)

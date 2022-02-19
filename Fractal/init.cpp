@@ -1,4 +1,6 @@
-#include"scene.h"
+﻿#include"scene.h"
+
+
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

@@ -1,8 +1,14 @@
-#ifndef FRACTAL_CONFIGURATION
+﻿#ifndef FRACTAL_CONFIGURATION
 #define FRACTAL_CONFIGURATION
+#include<vector>
 
 namespace fractal {
 	using namespace std;
+
+	using color = unsigned int;
+	using color_array = vector<color>;
+	using color_matrix = vector<color_array>;
+
 	//windowサイズ
 	constexpr int window_w = 960;
 	constexpr int window_h = 960;
@@ -25,10 +31,10 @@ namespace fractal {
 	constexpr int branch_pixel_size = 1;
 	constexpr int branch_pixel_w = window_w / branch_pixel_size;
 	constexpr int branch_pixel_h = window_h / branch_pixel_size;
-	constexpr int branch_num = 50000;
+	constexpr int branch_num = 100000;
 
 
-	enum sceneE :int {
+	enum class sceneE :int {
 		mandelbrot_setE
 		,barnsley_fernE
 		,ssangyongE
