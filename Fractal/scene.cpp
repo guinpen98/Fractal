@@ -3,14 +3,15 @@
 namespace fractal {
 
 	void scene() {
-		sceneE current_scene = sceneE::barnsley_fernE;
+		sceneE current_scene = sceneE::mandelbrot_setE;
 		//ピクセルの配列
 		color_matrix pixel(window_h, color_array(window_w, white));
+		mandelbrotScene(pixel);
 		//key入力
 		char key_state[256];
 		bool is_key_down =  false;
 
-		int pixel_size;
+		int pixel_size = 1;
 		while (fractal::update()) {
 			GetHitKeyStateAll(key_state);
 			if(key_state[KEY_INPUT_SPACE] == 0) is_key_down = false;
@@ -21,16 +22,16 @@ namespace fractal {
 				switch (current_scene)
 				{
 				case sceneE::mandelbrot_setE:
-					mandelbrotSetScene(current_scene, pixel);
+					mandelbrotScene(pixel);
 					break;
 				case sceneE::barnsley_fernE:
-					barnsleyFernScene(current_scene, pixel);
+					barnsleyFernScene(pixel);
 					break;
 				case sceneE::ssangyongE:
-					ssangyongScene(current_scene, pixel);
+					ssangyongScene(pixel);
 					break;
 				case sceneE::branchE:
-					branchScene(current_scene, pixel);
+					branchScene(pixel);
 					break;
 				default:
 					break;

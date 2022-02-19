@@ -2,7 +2,7 @@
 
 namespace fractal {
 
-	void branchScene(sceneE& current_scene, color_matrix& pixel) {
+	void branchScene(color_matrix& pixel) {
 		//アフィン変換
 		auto f1 = [](Vec2 coord) -> Vec2 {return Vec2(0.5 * coord.x + 0.3 * coord.y + 0.4, 0.3 * coord.x - 0.5 * coord.y + 0.1); };
 		auto f2 = [](Vec2 coord) -> Vec2 {return Vec2(0.66 * coord.x, - 0.66 * coord.y); };

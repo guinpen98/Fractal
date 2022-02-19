@@ -2,7 +2,7 @@
 
 namespace fractal {
 
-	void barnsleyFernScene(sceneE& current_scene, color_matrix& pixel) {
+	void barnsleyFernScene(color_matrix& pixel) {
 		//アフィン変換
 		auto f1 = [](Vec2 coord) -> Vec2{return Vec2(0.0, 0.16 * coord.y); };
 		auto f2 = [](Vec2 coord) -> Vec2{return Vec2(0.85 * coord.x + 0.04 * coord.y, -0.04 * coord.x + 0.85 * coord.y + 1.6); };

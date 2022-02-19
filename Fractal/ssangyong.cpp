@@ -2,7 +2,7 @@
 
 namespace fractal {
 
-	void ssangyongScene(sceneE& current_scene, color_matrix& pixel) {
+	void ssangyongScene(color_matrix& pixel) {
 		//アフィン変換
 		auto f1 = [](Vec2 coord) -> Vec2 {return Vec2(0.5 * coord.x + 0.5 * coord.y + 0.125, -0.5 * coord.x + 0.5 * coord.y + 0.625); };
 		auto f2 = [](Vec2 coord) -> Vec2 {return Vec2(0.5 * coord.x + 0.5 * coord.y - 0.125, -0.5 * coord.x + 0.5 * coord.y + 0.375); };

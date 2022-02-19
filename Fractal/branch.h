@@ -6,7 +6,7 @@
 #include"system.h"
 namespace fractal {
 
-	void branchScene(sceneE& current_scene, color_matrix& pixel);
+	void branchScene(color_matrix& pixel);
 }
 
 #endif // !FRACTAL_BRANCH_H

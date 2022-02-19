@@ -2,7 +2,7 @@
 
 namespace fractal {
 
-	void mandelbrot(color_matrix& pixel) {
+	void mandelbrotScene(color_matrix& pixel) {
 		for (int ky = 0; ky < window_h; ky++) {
 			double cy = (double(window_h - ky) / coefficient) - (complex_plane_h / 2);
 			for (int kx = 0; kx < window_w; kx++) {
@@ -27,8 +27,5 @@ namespace fractal {
 				}
 			}
 		}
-	}
-	void mandelbrotSetScene(sceneE& current_scene, color_matrix& pixel) {
-		mandelbrot(pixel);
 	}
 }
