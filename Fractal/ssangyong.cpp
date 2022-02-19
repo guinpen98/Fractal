@@ -17,7 +17,7 @@ namespace fractal {
 			else coord = f2(coord);
 			Vec2 icoord(coord.x * ssangyong_pixel_w, ssangyong_pixel_h - coord.y * ssangyong_pixel_h);
 			if (icoord.x < 0 || icoord.x > ssangyong_pixel_w || icoord.y < 0 || icoord.y > ssangyong_pixel_h) continue;
-			pixel[int(icoord.y)][int(icoord.x)] = 1;
+			else pixel[int(icoord.y)][int(icoord.x)] = black;
 		}
 		while (current_scene == sceneE::ssangyongE && update()) {
 			GetHitKeyStateAll(key_state);
@@ -29,10 +29,7 @@ namespace fractal {
 	void drawSsangyong(const color_matrix& pixel) {
 		for (int y = 0; y < ssangyong_pixel_h; y++)
 			for (int x = 0; x < ssangyong_pixel_w; x++) {
-				if (pixel[y][x] == 1)
-					DrawBox(x * ssangyong_pixel_size, y * ssangyong_pixel_size, (x + 1) * ssangyong_pixel_size, (y + 1) * ssangyong_pixel_size, GetColor(0, 50, 0), TRUE);
-				else
-					DrawBox(x * ssangyong_pixel_size, y * ssangyong_pixel_size, (x + 1) * ssangyong_pixel_size, (y + 1) * ssangyong_pixel_size, GetColor(255, 255, 255), TRUE);
+				DrawBox(x * ssangyong_pixel_size, y * ssangyong_pixel_size, (x + 1) * ssangyong_pixel_size, (y + 1) * ssangyong_pixel_size, pixel[y][x], TRUE);
 			}
 	}
 

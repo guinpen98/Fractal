@@ -21,7 +21,7 @@ namespace fractal {
 			else coord = f4(coord);
 			Vec2 icoord(fern_pixel_w / 2 + coord.x * fern_pixel_w / 10, fern_pixel_h - coord.y * fern_pixel_h / 12);
 			if (icoord.x < 0 || icoord.x > fern_pixel_w || icoord.y < 0 || icoord.y > fern_pixel_h) continue;
- 			pixel[int(icoord.y)][int(icoord.x)] = 1;
+ 			else pixel[int(icoord.y)][int(icoord.x)] = deep_green;
 		}
 		while (current_scene == sceneE::barnsley_fernE && update()) {
 			GetHitKeyStateAll(key_state);
@@ -33,10 +33,7 @@ namespace fractal {
 	void drawBarnsleyFern(const color_matrix& pixel) {
 		for (int y = 0; y < fern_pixel_h; y++)
 			for (int x = 0; x < fern_pixel_w; x++) {
-				if (pixel[y][x] == 1)
-					DrawBox(x * fern_pixel_size, y * fern_pixel_size, (x + 1) * fern_pixel_size, (y + 1) * fern_pixel_size, GetColor(0,50,0), TRUE);
-				else
-					DrawBox(x * fern_pixel_size, y * fern_pixel_size, (x + 1) * fern_pixel_size, (y + 1) * fern_pixel_size, GetColor(255, 255, 255), TRUE);
+				DrawBox(x * fern_pixel_size, y * fern_pixel_size, (x + 1) * fern_pixel_size, (y + 1) * fern_pixel_size, pixel[y][x], TRUE);
 			}
 	}
 

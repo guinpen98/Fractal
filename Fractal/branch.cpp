@@ -17,7 +17,7 @@ namespace fractal {
 			else coord = f2(coord);
 			Vec2 icoord(coord.x * branch_pixel_w + branch_pixel_w / 40, branch_pixel_h / 2 - coord.y * branch_pixel_h);
 			if (icoord.x < 0 || icoord.x > branch_pixel_w || icoord.y < 0 || icoord.y > branch_pixel_h) continue;
-			pixel[int(icoord.y)][int(icoord.x)] = 1;
+			pixel[int(icoord.y)][int(icoord.x)] = black;
 		}
 		while (current_scene == sceneE::branchE && update()) {
 			GetHitKeyStateAll(key_state);
@@ -28,12 +28,7 @@ namespace fractal {
 	}
 	void drawBranch(const color_matrix& pixel) {
 		for (int y = 0; y < branch_pixel_h; y++)
-			for (int x = 0; x < branch_pixel_w; x++) {
-				if (pixel[y][x] == 1)
-					DrawBox(x * branch_pixel_size, y * branch_pixel_size, (x + 1) * branch_pixel_size, (y + 1) * branch_pixel_size, GetColor(0, 50, 0), TRUE);
-				else
-					DrawBox(x * branch_pixel_size, y * branch_pixel_size, (x + 1) * branch_pixel_size, (y + 1) * branch_pixel_size, GetColor(255, 255, 255), TRUE);
-			}
+			for (int x = 0; x < branch_pixel_w; x++)
+				DrawBox(x * branch_pixel_size, y * branch_pixel_size, (x + 1) * branch_pixel_size, (y + 1) * branch_pixel_size, pixel[y][x], TRUE);
 	}
-
 }

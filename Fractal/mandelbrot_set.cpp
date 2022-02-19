@@ -2,7 +2,7 @@
 
 namespace fractal {
 
-	void mandelbrot(color_matrix& arr) {
+	void mandelbrot(color_matrix& pixel) {
 		for (int ky = 0; ky < window_h; ky++) {
 			double cy = (double(window_h - ky) / coefficient) - (complex_plane_h / 2);
 			for (int kx = 0; kx < window_w; kx++) {
@@ -18,41 +18,20 @@ namespace fractal {
 						break;
 					}
 				}
-				if (flag) arr[ky][kx] = whiteE;
+				if (flag) pixel[ky][kx] = white;
 				else {
-					if (cnt <= 1) arr[ky][kx] = blackE;
-					else if (cnt <= 3) arr[ky][kx] = deep_blueE;
-					else if (cnt <= 5) arr[ky][kx] = blueE;
-					else arr[ky][kx] = light_blueE;
+					if (cnt <= 1) pixel[ky][kx] = black;
+					else if (cnt <= 3) pixel[ky][kx] = deep_blue;
+					else if (cnt <= 5) pixel[ky][kx] = blue;
+					else pixel[ky][kx] = light_blue;
 				}
 			}
 		}
 	}
-	void drawMandelbrotSet(const color_matrix& arr) {
-		unsigned int cr = GetColor(0, 0, 0);
+	void drawMandelbrotSet(const color_matrix& pixel) {
 		for(int y = 0; y < window_h; y++)
 			for (int x = 0; x < window_w; x++) {
-				switch (arr[y][x])
-				{
-				case whiteE:
-					cr = GetColor(255, 255, 255);
-					break;
-				case light_blueE:
-					cr = GetColor(0, 0, 60);
-					break;
-				case blueE:
-					cr = GetColor(0, 0, 150);
-					break;
-				case deep_blueE:
-					cr = GetColor(0, 0, 255);
-					break;
-				case blackE:
-					cr = GetColor(0, 0, 0);
-					break;
-				default:
-					break;
-				}
-				DrawPixel(x, y, cr);
+				DrawPixel(x, y, pixel[y][x]);
 			}
 	}
 	void mandelbrotSetScene(sceneE& current_scene, color_matrix& pixel) {

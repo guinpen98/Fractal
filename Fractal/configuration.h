@@ -3,11 +3,10 @@
 #include<vector>
 
 namespace fractal {
-	using namespace std;
 
 	using color = unsigned int;
-	using color_array = vector<color>;
-	using color_matrix = vector<color_array>;
+	using color_array = std::vector<color>;
+	using color_matrix = std::vector<color_array>;
 
 	//windowサイズ
 	constexpr int window_w = 960;
@@ -42,13 +41,6 @@ namespace fractal {
 		,tailE
 	};
 
-	enum colorE :int {
-		whiteE
-		,light_blueE
-		,blueE
-		,deep_blueE
-		,blackE
-	};
 
 }
 
