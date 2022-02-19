@@ -6,7 +6,6 @@
 namespace fractal {
 
 	void mandelbrot(color_matrix& pixel);
-	void drawMandelbrotSet(const color_matrix& pixel);
 	void mandelbrotSetScene(sceneE& current_scene, color_matrix& pixel);
 }
 

@@ -7,7 +7,6 @@
 namespace fractal {
 
 	void branchScene(sceneE& current_scene, color_matrix& pixel);
-	void drawBranch(const color_matrix& pixel);
 }
 
 #endif // !FRACTAL_BRANCH_H

@@ -28,20 +28,7 @@ namespace fractal {
 			}
 		}
 	}
-	void drawMandelbrotSet(const color_matrix& pixel) {
-		for(int y = 0; y < window_h; y++)
-			for (int x = 0; x < window_w; x++) {
-				DrawPixel(x, y, pixel[y][x]);
-			}
-	}
 	void mandelbrotSetScene(sceneE& current_scene, color_matrix& pixel) {
-		//key入力
-		char key_state[256];
 		mandelbrot(pixel);
-		while (current_scene == sceneE::mandelbrot_setE && update()) {
-			GetHitKeyStateAll(key_state);
-			if (key_state[KEY_INPUT_SPACE]) moveScene(current_scene);
-			drawMandelbrotSet(pixel);
-		}
 	}
 }

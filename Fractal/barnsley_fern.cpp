@@ -9,8 +9,6 @@ namespace fractal {
 		auto f3 = [](Vec2 coord) -> Vec2{return Vec2(0.2 * coord.x - 0.26 * coord.y, 0.23 * coord.x + 0.22 * coord.y + 1.6); };
 		auto f4 = [](Vec2 coord) -> Vec2{return Vec2(-0.15 * coord.x + 0.28 * coord.y, 0.26 * coord.x + 0.24 * coord.y + 0.44); };
 
-		//key入力
-		char key_state[256];
 		//座標
 		Vec2 coord(0.0, 0.0);
 		for (int i = 0; i < fern_num; i++) {
@@ -23,18 +21,7 @@ namespace fractal {
 			if (icoord.x < 0 || icoord.x > fern_pixel_w || icoord.y < 0 || icoord.y > fern_pixel_h) continue;
  			else pixel[int(icoord.y)][int(icoord.x)] = deep_green;
 		}
-		while (current_scene == sceneE::barnsley_fernE && update()) {
-			GetHitKeyStateAll(key_state);
-			if (key_state[KEY_INPUT_A]) moveScene(current_scene);
-			drawBarnsleyFern(pixel);
-		}
 
-	}
-	void drawBarnsleyFern(const color_matrix& pixel) {
-		for (int y = 0; y < fern_pixel_h; y++)
-			for (int x = 0; x < fern_pixel_w; x++) {
-				DrawBox(x * fern_pixel_size, y * fern_pixel_size, (x + 1) * fern_pixel_size, (y + 1) * fern_pixel_size, pixel[y][x], TRUE);
-			}
 	}
 
 }
