@@ -1,5 +1,8 @@
-﻿#include "mandelbrot_set.h"
-
+#ifndef FRACTAL_MANDELBROT_SET_HPP
+#define FRACTAL_MANDELBROT_SET_HPP
+#include<vector>
+#include"system.hpp"
+#include"complex.h"
 namespace fractal {
 
 	void mandelbrotScene(color_matrix& pixel) {
@@ -29,3 +32,5 @@ namespace fractal {
 		}
 	}
 }
+
+#endif // !FRACTAL_MANDELBROT_SET_HPP

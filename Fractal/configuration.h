@@ -1,5 +1,5 @@
-﻿#ifndef FRACTAL_CONFIGURATION
-#define FRACTAL_CONFIGURATION
+﻿#ifndef FRACTAL_CONFIGURATION_H
+#define FRACTAL_CONFIGURATION_H
 #include<vector>
 
 namespace fractal {
@@ -44,4 +44,4 @@ namespace fractal {
 
 }
 
-#endif // !FRACTAL_CONFIGURATION
+#endif // !FRACTAL_CONFIGURATION_H

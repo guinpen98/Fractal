@@ -1,13 +1,17 @@
-Ôªø#include "ssangyong.h"
-
+#ifndef FRACTAL_SSANGYONG_HPP
+#define FRACTAL_SSANGYONG_HPP
+#include<vector>
+#include"random.hpp"
+#include"vec2.h"
+#include"system.hpp"
 namespace fractal {
 
 	void ssangyongScene(color_matrix& pixel) {
-		//„Ç¢„Éï„Ç£„É≥Â§âÊèõ
+		//ÉAÉtÉBÉìïœä∑
 		auto f1 = [](Vec2 coord) -> Vec2 {return Vec2(0.5 * coord.x + 0.5 * coord.y + 0.125, -0.5 * coord.x + 0.5 * coord.y + 0.625); };
 		auto f2 = [](Vec2 coord) -> Vec2 {return Vec2(0.5 * coord.x + 0.5 * coord.y - 0.125, -0.5 * coord.x + 0.5 * coord.y + 0.375); };
 
-		//Â∫ßÊ®ô
+		//ç¿ïW
 		Vec2 coord(0.0, 0.0);
 		for (int i = 0; i < ssangyong_num; i++) {
 			double r = random();
@@ -17,7 +21,8 @@ namespace fractal {
 			if (icoord.x < 0 || icoord.x > ssangyong_pixel_w || icoord.y < 0 || icoord.y > ssangyong_pixel_h) continue;
 			else pixel[int(icoord.y)][int(icoord.x)] = black;
 		}
-
 	}
-
 }
+
+#endif // !FRACTAL_SSANGYONG_HPP
+

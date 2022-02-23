@@ -1,13 +1,17 @@
-Ôªø#include "branch.h"
-
+#ifndef FRACTAL_BRANCH_HPP
+#define FRACTAL_BRANCH_HPP
+#include<vector>
+#include"random.hpp"
+#include"vec2.h"
+#include"system.hpp"
 namespace fractal {
 
 	void branchScene(color_matrix& pixel) {
-		//„Ç¢„Éï„Ç£„É≥Â§âÊèõ
+		//ÉAÉtÉBÉìïœä∑
 		auto f1 = [](Vec2 coord) -> Vec2 {return Vec2(0.5 * coord.x + 0.3 * coord.y + 0.4, 0.3 * coord.x - 0.5 * coord.y + 0.1); };
-		auto f2 = [](Vec2 coord) -> Vec2 {return Vec2(0.66 * coord.x, - 0.66 * coord.y); };
+		auto f2 = [](Vec2 coord) -> Vec2 {return Vec2(0.66 * coord.x, -0.66 * coord.y); };
 
-		//Â∫ßÊ®ô
+		//ç¿ïW
 		Vec2 coord(0.0, 0.0);
 		for (int i = 0; i < branch_num; i++) {
 			double r = random();
@@ -20,3 +24,5 @@ namespace fractal {
 
 	}
 }
+
+#endif // !FRACTAL_BRANCH_HPP
