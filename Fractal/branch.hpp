@@ -18,7 +18,7 @@ namespace fractal {
 			if (r < 0.6) coord = f1(coord);
 			else coord = f2(coord);
 			Vec2 icoord(coord.x * branch_pixel_w + branch_pixel_w / 40, branch_pixel_h / 2 - coord.y * branch_pixel_h);
-			if (icoord.x < 0 || icoord.x > branch_pixel_w || icoord.y < 0 || icoord.y > branch_pixel_h) continue;
+			if (icoord.x < 0 || icoord.x >= window_w || icoord.y < 0 || icoord.y >= window_h) continue;
 			pixel[int(icoord.y)][int(icoord.x)] = black;
 		}
 

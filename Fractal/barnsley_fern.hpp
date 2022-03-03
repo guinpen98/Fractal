@@ -22,7 +22,7 @@ namespace fractal {
 			else if (r < 0.93) coord = f3(coord);
 			else coord = f4(coord);
 			Vec2 icoord(fern_pixel_w / 2 + coord.x * fern_pixel_w / 10, fern_pixel_h - coord.y * fern_pixel_h / 12);
-			if (icoord.x < 0 || icoord.x > fern_pixel_w || icoord.y < 0 || icoord.y > fern_pixel_h) continue;
+			if (icoord.x < 0 || icoord.x >= window_w || icoord.y < 0 || icoord.y >= window_h) continue;
 			else pixel[int(icoord.y)][int(icoord.x)] = deep_green;
 		}
 	}

@@ -1,6 +1,7 @@
 #ifndef FRACTAL_SCENE_HPP
 #define FRACTAL_SCENE_HPP
 #include"branch.hpp"
+#include"ammonite.hpp"
 #include"ssangyong.hpp"
 #include"barnsley_fern.hpp"
 #include"mandelbrot_set.hpp"
@@ -14,7 +15,7 @@ namespace fractal {
 		char key_state[256];
 		bool is_key_down = false;
 
-		int pixel_size = 1;
+		double pixel_size = 1;
 		while (fractal::update()) {
 			GetHitKeyStateAll(key_state);
 			if (key_state[KEY_INPUT_SPACE] == 0) is_key_down = false;
@@ -36,6 +37,9 @@ namespace fractal {
 				case sceneE::branchE:
 					branchScene(pixel);
 					break;
+				case sceneE::ammoniteE:
+					ammoniteScene(pixel);
+					break;
 				default:
 					break;
 				}
@@ -54,6 +58,8 @@ namespace fractal {
 			case sceneE::branchE:
 				pixel_size = branch_pixel_size;
 				break;
+			case sceneE::ammoniteE:
+				pixel_size = ammonite_pixel_size;
 			default:
 				break;
 			}

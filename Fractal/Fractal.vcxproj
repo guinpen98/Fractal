@@ -154,6 +154,7 @@
     <ClCompile Include="init.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ammonite.hpp" />
     <ClInclude Include="barnsley_fern.hpp" />
     <ClInclude Include="branch.hpp" />
     <ClInclude Include="complex.h" />
