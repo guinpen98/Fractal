@@ -164,6 +164,7 @@
     <ClInclude Include="mandelbrot_set.hpp" />
     <ClInclude Include="ssangyong.hpp" />
     <ClInclude Include="system.hpp" />
+    <ClInclude Include="tree.hpp" />
     <ClInclude Include="vec2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
