@@ -6,6 +6,7 @@
 #include"ssangyong.hpp"
 #include"barnsley_fern.hpp"
 #include"mandelbrot_set.hpp"
+#include"gumowski_mira_attractor.hpp"
 namespace fractal {
 	void scene() {
 		sceneE current_scene = sceneE::mandelbrot_setE;
@@ -44,6 +45,8 @@ namespace fractal {
 				case sceneE::treeE:
 					treeScene(pixel);
 					break;
+				case sceneE::gumowski_mira_attractorE:
+					gumowskiMiraAttractorScene(pixel);
 				default:
 					break;
 				}

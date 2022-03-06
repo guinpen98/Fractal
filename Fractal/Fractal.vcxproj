@@ -159,6 +159,7 @@
     <ClInclude Include="branch.hpp" />
     <ClInclude Include="complex.h" />
     <ClInclude Include="configuration.h" />
+    <ClInclude Include="gumowski_mira_attractor.hpp" />
     <ClInclude Include="random.hpp" />
     <ClInclude Include="scene.hpp" />
     <ClInclude Include="mandelbrot_set.hpp" />

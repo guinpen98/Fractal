@@ -7,9 +7,9 @@ namespace fractal {
 
 	void mandelbrotScene(color_matrix& pixel) {
 		for (int ky = 0; ky < window_h; ky++) {
-			double cy = (double(window_h - ky) / coefficient) - (complex_plane_h / 2);
+			double cy = (double(window_h - ky) / ma_coefficient) - (complex_plane_h / 2);
 			for (int kx = 0; kx < window_w; kx++) {
-				double cx = (double(kx) / coefficient) - (complex_plane_w / 2);
+				double cx = (double(kx) / ma_coefficient) - (complex_plane_w / 2);
 				Complex c = Complex(cx, cy), z = Complex(0.0, 0.0);
 				bool flag = true;
 				int cnt = 0;

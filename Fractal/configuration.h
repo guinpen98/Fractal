@@ -12,9 +12,9 @@ namespace fractal {
 	constexpr int window_w = 960;
 	constexpr int window_h = 960;
 	//マンデルブロ集合の設定
-	constexpr int coefficient = 240;
-	constexpr int complex_plane_w = window_w / coefficient;
-	constexpr int complex_plane_h = window_h / coefficient;
+	constexpr int ma_coefficient = 240;
+	constexpr int complex_plane_w = window_w / ma_coefficient;
+	constexpr int complex_plane_h = window_h / ma_coefficient;
 	constexpr int max_it = 256;
 	//バーンスレイのシダの設定
 	constexpr int fern_pixel_size = 1;
@@ -41,6 +41,13 @@ namespace fractal {
 	constexpr int tree_pixel_w = window_w / tree_pixel_size;
 	constexpr int tree_pixel_h = window_h / tree_pixel_size;
 	constexpr int tree_num = 500000;
+	//グモウスキーとミラの写像
+	constexpr double mu = -0.496;
+	constexpr double alpha = 0.008;
+	constexpr double sigma = 0.05;
+
+	constexpr int gu_coefficient = 24;
+	constexpr int gumowski_mira_attractor_num = 300000;
 
 	enum class sceneE :int {
 		mandelbrot_setE
@@ -49,6 +56,7 @@ namespace fractal {
 		,branchE
 		,ammoniteE
 		,treeE
+		,gumowski_mira_attractorE
 		,tailE
 	};
 
