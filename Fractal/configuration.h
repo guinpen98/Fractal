@@ -12,6 +12,7 @@ namespace fractal {
 	constexpr int window_w = 960;
 	constexpr int window_h = 960;
 	//マンデルブロ集合の設定
+	constexpr int mandelbrot_pixel_size = 1;
 	constexpr int ma_coefficient = 240;
 	constexpr int complex_plane_w = window_w / ma_coefficient;
 	constexpr int complex_plane_h = window_h / ma_coefficient;

@@ -54,7 +54,8 @@ namespace fractal {
 			switch (current_scene)
 			{
 			case sceneE::mandelbrot_setE:
-				pixel_size = 1;
+				pixel_size = mandelbrot_pixel_size
+					;
 				break;
 			case sceneE::barnsley_fernE:
 				pixel_size = fern_pixel_size;
